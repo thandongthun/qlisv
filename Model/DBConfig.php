@@ -21,28 +21,35 @@
 
 		// Phương thức thi câu lệnh truy vấn
 		public function execute($sql) {
-			$result = mysqli_query($this->conn, $sql);
+			$result = mysqli_query($this->connect(), $sql);
 			return $result;
 		}
 
 		// Phương thức lấy dữ liệu
 		public function getData($sql) {
-			$result = mysqli_query($this->conn, $sql);
+			$result = mysqli_query($this->connect(), $sql);
 			return $result;
 		}
 
 		//Phương thức lấy toàn bộ dữ liệu
-		public function getAllData($sql) {
-			$result = mysqli_query($this->conn, $sql);
+		//cach 1
+		/*public function getAllData($sql) {
+			$result = mysqli_query($this->connect(), $sql);
 			$arr = array();
-			while ($row = mysqli_fetch_object($result)) {
+			while ($row = mysqli_fetch_array($result)) {
 				$arr[] = $row;
 			}
 			return $arr;
+		}*/
+		//cach 2
+		public function get_all($table){
+			$sql = "Select * from " . $table;
+			$result = mysqli_query($this->connect(), $sql);
+			return $result;
 		}
 
 		public function nums_row($sql) {
-			$result = mysqli_query($this->conn, $sql);
+			$result = mysqli_query($this->connect(), $sql);
 			return $result; 
 		}
 
@@ -59,8 +66,8 @@
 		}
 
 		//Phương thức xóa
-		public function DeleteData($sbd) {
-			$sql = "DELETE FROM sinhvien WHERE SBD = '$sbd'";
+		public function DeleteData($table, $sbd) {
+			$sql = "DELETE FROM" . $table . "WHERE SBD = '$sbd'";
 			return $this->execute($sql);
 		}
 	}

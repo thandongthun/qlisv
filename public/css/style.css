@@ -1,0 +1,41 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+.content {
+	margin-top: 60px;
+}
+.dangkithanhvien {
+	width: 400px;
+	border: 1px solid #DDDDDD;
+	margin: 0 auto;
+}
+.dangkithanhvien h3 {
+	background: #009688;
+	padding: 5px;
+	color: #FFF;
+	text-align: center;
+}
+.dangkithanhvien form table tr td {
+	padding: 5px;
+
+}
+.dangkithanhvien form table tr td input {
+	padding: 3px 5px;
+}
+.dangkithanhvien form table tr td span {
+	margin-left: 5px;
+}
+.danhsach {
+	margin-top: 60px;
+	padding: 50px;
+}
+.danhsach h3 {
+	background: #009688;
+	color: #fff;
+	padding: 5px;
+	text-align: center;
+}
+.icon {
+	margin-right: 10px;
+}
